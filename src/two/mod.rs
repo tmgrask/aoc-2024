@@ -5,7 +5,8 @@ fn difference_is_ok(current: &i32, previous: &i32) -> bool {
     if difference.abs() < 1 || difference.abs() > 3 {
         return false;
     }
-    return true;
+
+    true
 }
 
 fn parse_report(report: &str) -> Vec<i32> {
@@ -13,7 +14,8 @@ fn parse_report(report: &str) -> Vec<i32> {
     for level in report.split(" ") {
         parsed.push(level.parse::<i32>().unwrap());
     }
-    return parsed;
+
+    parsed
 }
 
 fn first_bad_index(report: &Vec<i32>) -> Option<usize> {
@@ -58,7 +60,8 @@ fn first_bad_index(report: &Vec<i32>) -> Option<usize> {
         }
         previous_level = Some(level);
     }
-    return None;
+
+    None
 }
 
 pub fn part_one() -> i32 {

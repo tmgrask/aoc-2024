@@ -14,7 +14,7 @@ pub fn part_one() -> i32 {
         total += a * b;
     }
 
-    return total;
+    total
 }
 
 #[derive(Debug)]
@@ -72,5 +72,5 @@ pub fn part_two() -> i32 {
         }
 
     }
-    return total;
+    total
 }

@@ -1,6 +1,7 @@
 mod one;
 mod two;
 mod three;
+mod four;
 
 fn main() {
     println!("\nDay 1"); // List sorting
@@ -14,4 +15,8 @@ fn main() {
     println!("\nDay 3"); // Regexing multiple captures
     println!("\tpart 1: {}", three::part_one());
     println!("\tpart 2: {}", three::part_two());
+
+    println!("\nDay 4"); // 2d word lookup
+    println!("\tpart 1: {}", four::part_one());
+    println!("\tpart 2: {}", four::part_two());
 }
