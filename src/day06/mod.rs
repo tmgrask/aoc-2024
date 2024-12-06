@@ -162,7 +162,7 @@ impl Map {
         }
     }
 
-    fn simulate_obstruction(&mut self, cursor_start: Cursor) -> Option<Point> {
+    fn simulate_obstruction(&mut self, patrolled_points: &HashSet<Point>) -> Option<Point> {
         // Add new obstruction point at the current cursor
         let new_obstacle = match self
             .grid
@@ -170,9 +170,9 @@ impl Map {
             .and_then(|row| row.get(self.cursor.x as usize))
             .cloned()
         {
-            Some(next_point) => {
-                if !next_point.obstacle {
-                    Some(next_point)
+            Some(point) => {
+                if !point.obstacle {
+                    Some(point)
                 } else {
                     None
                 }
@@ -181,7 +181,7 @@ impl Map {
         };
 
         // Can't place on starting position
-        if new_obstacle.clone()?.x == cursor_start.x && new_obstacle.clone()?.y == cursor_start.y {
+        if patrolled_points.contains(&new_obstacle.clone().unwrap()) {
             return None;
         }
 
@@ -193,10 +193,19 @@ impl Map {
             .unwrap();
         check_point.obstacle = true;
 
+        // backup 1 step depending on direction, then simulate with added obstacle
+        match self.cursor.direction {
+            Direction::Up => self.cursor.y += 1,
+            Direction::Down => self.cursor.y -= 1,
+            Direction::Left => self.cursor.x += 1,
+            Direction::Right => self.cursor.x -= 1,
+        };
+
         // if we return to a cursor position we've already seen during
         // simulation, we're in an infinite loop
         let mut simulated_cursors = HashSet::new();
-        self.cursor = cursor_start;
+        simulated_cursors.insert(self.cursor.clone());
+
         while let Some(_) = self.next() {
             if simulated_cursors.contains(&self.cursor) {
                 return new_obstacle;
@@ -237,19 +246,25 @@ pub fn part_two() -> usize {
 
     let cursor_start = map.cursor.clone();
 
-    // First check if placing an obstruction right infront of start makes a loop
-    if let Some(first) = map.clone().simulate_obstruction(cursor_start.clone()) {
-        map.marked_points.insert(first);
-    };
+    // Record the start position so we don't try to place an obstacle there in the future
+    let mut patrolled_points = HashSet::new();
+    patrolled_points.insert(Point {
+        x: cursor_start.x,
+        y: cursor_start.y,
+        obstacle: false,
+    });
 
     // then iterate over each step, checking if adding an obstruction after the step makes a loop
-    while let Some(_) = map.next() {
-        match map.clone().simulate_obstruction(cursor_start.clone()) {
+    // keep track of positions we've walked on so we don't place obstacles there if we ever return
+    let mut patrolled_points = HashSet::new();
+    while let Some(patrolled_point) = map.next() {
+        match map.clone().simulate_obstruction(&patrolled_points) {
             Some(obstruction_at) => {
                 map.marked_points.insert(obstruction_at);
             }
-            None => continue,
+            None => {}
         };
+        patrolled_points.insert(patrolled_point);
     }
 
     map.marked_points.len()
