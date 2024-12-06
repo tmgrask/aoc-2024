@@ -21,7 +21,7 @@ fn main() {
     println!("\tpart 1: {}", day04::part_one());
     println!("\tpart 2: {}", day04::part_two());
 
-    println!("\nDay 5"); // 2d word lookup
+    println!("\nDay 5"); // unusual order comparisons
     println!("\tpart 1: {}", day05::part_one());
     println!("\tpart 2: {}", day05::part_two());
 }
