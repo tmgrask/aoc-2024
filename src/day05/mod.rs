@@ -58,7 +58,7 @@ fn get_middle_sum(updates: Vec<Vec<&str>>) -> i32 {
 }
 
 pub fn part_one() -> i32 {
-    let content = fs::read_to_string("src/five/input.txt").expect("Should read");
+    let content = fs::read_to_string("src/day05/input.txt").expect("Should read");
 
     let (updates, ordering) = prepare_data(content.as_str());
 
@@ -73,7 +73,7 @@ pub fn part_one() -> i32 {
 }
 
 pub fn part_two() -> i32 {
-    let content = fs::read_to_string("src/five/input.txt").expect("Should read");
+    let content = fs::read_to_string("src/day05/input.txt").expect("Should read");
 
     let (updates, ordering) = prepare_data(content.as_str());
 

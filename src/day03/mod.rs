@@ -2,7 +2,7 @@ use regex::{Captures, Regex};
 use std::fs;
 
 pub fn part_one() -> i32 {
-    let content = fs::read_to_string("src/three/input.txt").expect("Should read");
+    let content = fs::read_to_string("src/day03/input.txt").expect("Should read");
 
     let re = Regex::new(r"mul\((\d+),(\d+)\)").unwrap();
 
@@ -42,7 +42,7 @@ impl From<Captures<'_>> for Match {
 }
 
 pub fn part_two() -> i32 {
-    let content = fs::read_to_string("src/three/input.txt").expect("Should read");
+    let content = fs::read_to_string("src/day03/input.txt").expect("Should read");
 
     let re = Regex::new(r"(?P<mul>mul\((\d+),(\d+)\))|(?P<do>do\(\))|(?P<dont>don't\(\))").unwrap();
 

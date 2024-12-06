@@ -184,7 +184,7 @@ fn prepare_grid(content: String) -> Vec<Vec<char>> {
 }
 
 pub fn part_one() -> usize {
-    let content = fs::read_to_string("src/four/input.txt").expect("Should read");
+    let content = fs::read_to_string("src/day04/input.txt").expect("Should read");
 
     let word_finder = WordFinder::new(prepare_grid(content));
 
@@ -194,7 +194,7 @@ pub fn part_one() -> usize {
 }
 
 pub fn part_two() -> usize {
-    let content = fs::read_to_string("src/four/input.txt").expect("Should read");
+    let content = fs::read_to_string("src/day04/input.txt").expect("Should read");
 
     let word_finder = WordFinder::new(prepare_grid(content));
 

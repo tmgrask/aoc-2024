@@ -65,7 +65,7 @@ fn first_bad_index(report: &Vec<i32>) -> Option<usize> {
 }
 
 pub fn part_one() -> i32 {
-    let content = fs::read_to_string("src/two/input.txt").expect("Should read");
+    let content = fs::read_to_string("src/day02/input.txt").expect("Should read");
 
     let mut safe_reports = 0;
 
@@ -82,7 +82,7 @@ pub fn part_one() -> i32 {
 }
 
 pub fn part_two() -> i32 {
-    let content = fs::read_to_string("src/two/input.txt").expect("Should read");
+    let content = fs::read_to_string("src/day02/input.txt").expect("Should read");
 
     let mut safe_reports = 0;
 

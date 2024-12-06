@@ -2,7 +2,7 @@ use std::fs;
 
 pub fn part_one() -> i32 {
     let contents =
-        fs::read_to_string("src/one/input.txt").expect("Should have been able to read input.txt");
+        fs::read_to_string("src/day01/input.txt").expect("Should have been able to read input.txt");
 
     let mut left = Vec::new();
     let mut right = Vec::new();
@@ -30,7 +30,7 @@ pub fn part_one() -> i32 {
 
 pub fn part_two() -> i32 {
     let contents =
-        fs::read_to_string("src/one/input.txt").expect("Should have been able to read input.txt");
+        fs::read_to_string("src/day01/input.txt").expect("Should have been able to read input.txt");
 
     let mut left = Vec::new();
     let mut right = Vec::new();
