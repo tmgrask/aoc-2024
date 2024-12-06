@@ -1,7 +1,8 @@
-mod one;
-mod two;
-mod three;
+mod five;
 mod four;
+mod one;
+mod three;
+mod two;
 
 fn main() {
     println!("\nDay 1"); // List sorting
@@ -19,4 +20,8 @@ fn main() {
     println!("\nDay 4"); // 2d word lookup
     println!("\tpart 1: {}", four::part_one());
     println!("\tpart 2: {}", four::part_two());
+
+    println!("\nDay 5"); // 2d word lookup
+    println!("\tpart 1: {}", five::part_one());
+    println!("\tpart 2: {}", five::part_two());
 }

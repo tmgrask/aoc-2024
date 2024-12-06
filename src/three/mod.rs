@@ -1,4 +1,4 @@
-use regex::{Regex, Captures};
+use regex::{Captures, Regex};
 use std::fs;
 
 pub fn part_one() -> i32 {
@@ -51,7 +51,7 @@ pub fn part_two() -> i32 {
 
     for capture in re.captures_iter(&content) {
         let m: Match = capture.into();
-        
+
         match m {
             Match::Mul { a, b } => {
                 if enabled {
@@ -68,9 +68,7 @@ pub fn part_two() -> i32 {
                     enabled = false;
                 }
             }
-
         }
-
     }
     total
 }

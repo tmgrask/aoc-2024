@@ -1,7 +1,8 @@
 use std::fs;
 
 pub fn part_one() -> i32 {
-    let contents = fs::read_to_string("src/one/input.txt").expect("Should have been able to read input.txt");
+    let contents =
+        fs::read_to_string("src/one/input.txt").expect("Should have been able to read input.txt");
 
     let mut left = Vec::new();
     let mut right = Vec::new();
@@ -19,7 +20,7 @@ pub fn part_one() -> i32 {
     let mut differences = 0;
 
     for pair in pairs {
-        let difference = pair.0 - pair.1; 
+        let difference = pair.0 - pair.1;
         differences += difference.abs();
         //println!("{:?} difference {difference}, differences: {differences}", pair);
     }
@@ -28,7 +29,8 @@ pub fn part_one() -> i32 {
 }
 
 pub fn part_two() -> i32 {
-    let contents = fs::read_to_string("src/one/input.txt").expect("Should have been able to read input.txt");
+    let contents =
+        fs::read_to_string("src/one/input.txt").expect("Should have been able to read input.txt");
 
     let mut left = Vec::new();
     let mut right = Vec::new();
@@ -41,7 +43,8 @@ pub fn part_two() -> i32 {
     let mut similarity = 0;
 
     for value in left.iter() {
-        let right_indices: Vec<usize> = right.iter()
+        let right_indices: Vec<usize> = right
+            .iter()
             .enumerate()
             .filter(|(_, val)| *val == value)
             .map(|(i, _)| i)
