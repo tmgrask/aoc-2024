@@ -4,6 +4,7 @@ mod day03;
 mod day04;
 mod day05;
 mod day06;
+mod day07;
 
 #[macro_export]
 macro_rules! time_it {
@@ -52,5 +53,10 @@ fn main() {
     // Path finding
     time_it!(day06::part_one());
     time_it!(day06::part_two());
+    println!("");
+
+    // Kenken
+    time_it!(day07::part_one());
+    time_it!(day07::part_two());
     println!("");
 }
