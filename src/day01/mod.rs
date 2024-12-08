@@ -1,8 +1,8 @@
 use std::fs;
 
-pub fn part_one() -> i32 {
+pub fn part_one(file: &str) -> i32 {
     let contents =
-        fs::read_to_string("src/day01/input.txt").expect("Should have been able to read input.txt");
+        fs::read_to_string(file).expect("Should have been able to read input.txt");
 
     let mut left = Vec::new();
     let mut right = Vec::new();
@@ -28,9 +28,9 @@ pub fn part_one() -> i32 {
     differences
 }
 
-pub fn part_two() -> i32 {
+pub fn part_two(file: &str) -> i32 {
     let contents =
-        fs::read_to_string("src/day01/input.txt").expect("Should have been able to read input.txt");
+        fs::read_to_string(file).expect("Should have been able to read input.txt");
 
     let mut left = Vec::new();
     let mut right = Vec::new();
@@ -53,4 +53,21 @@ pub fn part_two() -> i32 {
     }
 
     similarity
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn p1() {
+        let result = part_one(&"src/day01/test.txt");
+        assert_eq!(result, 11);
+    }
+
+    #[test]
+    fn p2() {
+        let result = part_two(&"src/day01/test.txt");
+        assert_eq!(result, 31);
+    }
 }

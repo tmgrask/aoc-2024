@@ -183,8 +183,8 @@ fn prepare_grid(content: String) -> Vec<Vec<char>> {
     grid
 }
 
-pub fn part_one() -> usize {
-    let content = fs::read_to_string("src/day04/input.txt").expect("Should read");
+pub fn part_one(file: &str) -> usize {
+    let content = fs::read_to_string(file).expect("Should read");
 
     let word_finder = WordFinder::new(prepare_grid(content));
 
@@ -193,8 +193,8 @@ pub fn part_one() -> usize {
     results.len()
 }
 
-pub fn part_two() -> usize {
-    let content = fs::read_to_string("src/day04/input.txt").expect("Should read");
+pub fn part_two(file: &str) -> usize {
+    let content = fs::read_to_string(file).expect("Should read");
 
     let word_finder = WordFinder::new(prepare_grid(content));
 
@@ -203,4 +203,21 @@ pub fn part_two() -> usize {
     let intersections = find_intersections(&results);
 
     intersections.len()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn p1() {
+        let result = part_one(&"src/day04/test.txt");
+        assert_eq!(result, 18);
+    }
+
+    #[test]
+    fn p2() {
+        let result = part_two(&"src/day04/test.txt");
+        assert_eq!(result, 9);
+    }
 }

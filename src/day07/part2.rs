@@ -79,7 +79,7 @@ impl TestValue {
             }
             let part = parts.pop_front().unwrap();
             match op {
-                Operation::Mul => total = total * part,
+                Operation::Mul => total *= part,
                 Operation::Add => total += part,
                 Operation::Concat => {
                     let concatenated = format!("{}{}", total, part)

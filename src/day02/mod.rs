@@ -64,8 +64,8 @@ fn first_bad_index(report: &Vec<i32>) -> Option<usize> {
     None
 }
 
-pub fn part_one() -> i32 {
-    let content = fs::read_to_string("src/day02/input.txt").expect("Should read");
+pub fn part_one(file: &str) -> i32 {
+    let content = fs::read_to_string(file).expect("Should read");
 
     let mut safe_reports = 0;
 
@@ -81,8 +81,8 @@ pub fn part_one() -> i32 {
     safe_reports
 }
 
-pub fn part_two() -> i32 {
-    let content = fs::read_to_string("src/day02/input.txt").expect("Should read");
+pub fn part_two(file: &str) -> i32 {
+    let content = fs::read_to_string(file).expect("Should read");
 
     let mut safe_reports = 0;
 
@@ -122,4 +122,21 @@ pub fn part_two() -> i32 {
     }
 
     safe_reports
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn p1() {
+        let result = part_one(&"src/day02/test.txt");
+        assert_eq!(result, 2);
+    }
+
+    #[test]
+    fn p2() {
+        let result = part_two(&"src/day02/test.txt");
+        assert_eq!(result, 4);
+    }
 }

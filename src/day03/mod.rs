@@ -1,8 +1,8 @@
 use regex::{Captures, Regex};
 use std::fs;
 
-pub fn part_one() -> i32 {
-    let content = fs::read_to_string("src/day03/input.txt").expect("Should read");
+pub fn part_one(file: &str) -> i32 {
+    let content = fs::read_to_string(file).expect("Should read");
 
     let re = Regex::new(r"mul\((\d+),(\d+)\)").unwrap();
 
@@ -41,8 +41,8 @@ impl From<Captures<'_>> for Match {
     }
 }
 
-pub fn part_two() -> i32 {
-    let content = fs::read_to_string("src/day03/input.txt").expect("Should read");
+pub fn part_two(file: &str) -> i32 {
+    let content = fs::read_to_string(file).expect("Should read");
 
     let re = Regex::new(r"(?P<mul>mul\((\d+),(\d+)\))|(?P<do>do\(\))|(?P<dont>don't\(\))").unwrap();
 
@@ -71,4 +71,21 @@ pub fn part_two() -> i32 {
         }
     }
     total
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn p1() {
+        let result = part_one(&"src/day03/test.txt");
+        assert_eq!(result, 161);
+    }
+
+    #[test]
+    fn p2() {
+        let result = part_two(&"src/day03/test.txt");
+        assert_eq!(result, 48);
+    }
 }

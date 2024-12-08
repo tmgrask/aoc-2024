@@ -224,8 +224,8 @@ fn deduplicate_points(points: Vec<Point>) -> Vec<Point> {
     set.into_iter().collect()
 }
 
-pub fn part_one() -> usize {
-    let content = fs::read_to_string("src/day06/input.txt").expect("Should read");
+pub fn part_one(file: &str) -> usize {
+    let content = fs::read_to_string(file).expect("Should read");
 
     let mut map = Map::new(content.as_str());
 
@@ -239,8 +239,8 @@ pub fn part_one() -> usize {
     deduplicate_points(patrolled_points).len()
 }
 
-pub fn part_two() -> usize {
-    let content = fs::read_to_string("src/day06/input.txt").expect("Should read");
+pub fn part_two(file: &str) -> usize {
+    let content = fs::read_to_string(file).expect("Should read");
 
     let mut map = Map::new(content.as_str());
 
@@ -268,4 +268,21 @@ pub fn part_two() -> usize {
     }
 
     map.marked_points.len()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn p1() {
+        let result = part_one(&"src/day06/test.txt");
+        assert_eq!(result, 41);
+    }
+
+    #[test]
+    fn p2() {
+        let result = part_two(&"src/day06/test.txt");
+        assert_eq!(result, 6);
+    }
 }
