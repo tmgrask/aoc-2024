@@ -7,6 +7,7 @@ mod day06;
 mod day07;
 mod day08;
 mod day09;
+mod day10;
 
 #[macro_export]
 macro_rules! time_it {
@@ -70,5 +71,10 @@ fn main() {
     // Defragmentation
     time_it!(day09::part_one("src/day09/input.txt"));
     time_it!(day09::part_two("src/day09/input.txt"));
+    println!("");
+
+    // Topology search
+    time_it!(day10::part_one("src/day10/input.txt"));
+    time_it!(day10::part_two("src/day10/input.txt"));
     println!("");
 }
