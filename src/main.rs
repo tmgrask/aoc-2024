@@ -6,6 +6,7 @@ mod day05;
 mod day06;
 mod day07;
 mod day08;
+mod day09;
 
 #[macro_export]
 macro_rules! time_it {
@@ -64,5 +65,10 @@ fn main() {
     // Resonant collinearity
     time_it!(day08::part_one("src/day08/input.txt"));
     time_it!(day08::part_two("src/day08/input.txt"));
+    println!("");
+
+    // Defragmentation
+    time_it!(day09::part_one("src/day09/input.txt"));
+    time_it!(day09::part_two("src/day09/input.txt"));
     println!("");
 }

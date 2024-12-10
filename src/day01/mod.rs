@@ -1,8 +1,7 @@
 use std::fs;
 
 pub fn part_one(file: &str) -> i32 {
-    let contents =
-        fs::read_to_string(file).expect("Should have been able to read input.txt");
+    let contents = fs::read_to_string(file).expect("Should have been able to read input.txt");
 
     let mut left = Vec::new();
     let mut right = Vec::new();
@@ -29,8 +28,7 @@ pub fn part_one(file: &str) -> i32 {
 }
 
 pub fn part_two(file: &str) -> i32 {
-    let contents =
-        fs::read_to_string(file).expect("Should have been able to read input.txt");
+    let contents = fs::read_to_string(file).expect("Should have been able to read input.txt");
 
     let mut left = Vec::new();
     let mut right = Vec::new();
