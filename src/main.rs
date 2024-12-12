@@ -8,6 +8,7 @@ mod day07;
 mod day08;
 mod day09;
 mod day10;
+mod day11;
 
 #[macro_export]
 macro_rules! time_it {
@@ -76,5 +77,10 @@ fn main() {
     // Topology search
     time_it!(day10::part_one("src/day10/input.txt"));
     time_it!(day10::part_two("src/day10/input.txt"));
+    println!("");
+
+    // Stones with numbers on 'em
+    time_it!(day11::part_one("src/day11/input.txt"));
+    time_it!(day11::part_two("src/day11/input.txt"));
     println!("");
 }
