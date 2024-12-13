@@ -9,6 +9,7 @@ mod day08;
 mod day09;
 mod day10;
 mod day11;
+mod day12;
 
 #[macro_export]
 macro_rules! time_it {
@@ -83,4 +84,8 @@ fn main() {
     time_it!(day11::part_one("src/day11/input.txt"));
     time_it!(day11::part_two("src/day11/input.txt"));
     println!("");
+
+    // Garden areas
+    time_it!(day12::part_one("src/day12/input.txt"));
+    time_it!(day12::part_two("src/day12/input.txt"));
 }
