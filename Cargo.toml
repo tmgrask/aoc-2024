@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 regex = "1.10"
 rayon = "1.8"
+num = "0.4.3"

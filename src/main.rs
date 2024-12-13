@@ -10,6 +10,7 @@ mod day09;
 mod day10;
 mod day11;
 mod day12;
+mod day13;
 
 #[macro_export]
 macro_rules! time_it {
@@ -88,4 +89,10 @@ fn main() {
     // Garden areas
     time_it!(day12::part_one("src/day12/input.txt"));
     time_it!(day12::part_two("src/day12/input.txt"));
+    println!("");
+
+    // Claw machine system of equations
+    time_it!(day13::part_one("src/day13/input.txt"));
+    time_it!(day13::part_two("src/day13/input.txt"));
+    println!("");
 }
