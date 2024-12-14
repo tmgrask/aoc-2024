@@ -11,6 +11,7 @@ mod day10;
 mod day11;
 mod day12;
 mod day13;
+mod day14;
 
 #[macro_export]
 macro_rules! time_it {
@@ -94,5 +95,10 @@ fn main() {
     // Claw machine system of equations
     time_it!(day13::part_one("src/day13/input.txt"));
     time_it!(day13::part_two("src/day13/input.txt"));
+    println!("");
+
+    // Grid trajectories
+    time_it!(day14::part_one("src/day14/input.txt"));
+    time_it!(day14::part_two("src/day14/input.txt"));
     println!("");
 }
