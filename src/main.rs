@@ -12,6 +12,7 @@ mod day11;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
 
 #[macro_export]
 macro_rules! time_it {
@@ -101,4 +102,7 @@ fn main() {
     time_it!(day14::part_one("src/day14/input.txt"));
     time_it!(day14::part_two("src/day14/input.txt"));
     println!("");
+
+    // Box re-arrangements
+    time_it!(day15::part_one("src/day15/input.txt"));
 }
